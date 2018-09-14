@@ -7,4 +7,4 @@ Each one of these three structures responds to very particular social contexts. 
 CURRENT WORD COUNT: 463 
 NOTES: Sebastian - este es el resultado con los comentarios de Lonneke y Mario (otro compañero que trabaja simulaciones y networks) incluidos. Mario me dijo, como Robin, que lo de la Cobb-Douglass hay que explicarla mejor o sacarlo porque parece no es nada directo la forma de usarlo. También me recomendó agregar una correlación tipo QAP. Link https://www.rdocumentation.org/packages/sna/versions/2.4/topics/qaptest
 https://github.com/kateto/Network_Analysis_R_Examples/blob/master/R%20Scripts/Comm645-MRQAP.R
-Básicamente hay espacio para que agregues un poquito más en posible metodología. Cuando leas esto me avisas! Voy a subir un documento que diga Back-up que es el Abstract como lo dejaste tú esta mañana por si no te gustan estos cambios. 
+Básicamente hay espacio para que agregues un poquito más en posible metodología. Cuando leas esto me avisas! (tengo por ahí unas impresiones del viejo documento si quieres recuperar algo de ese)
