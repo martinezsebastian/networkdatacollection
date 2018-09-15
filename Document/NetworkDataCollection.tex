@@ -1,0 +1,113 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage[margin=0.8in]{geometry}
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}			% Use pdf, png, jpg, or eps' with pdflatex; use eps in DVI mode
+\usepackage{amsthm} % Theorems and definitions
+\usepackage{amsfonts} % Math fonts
+\usepackage{amsmath} % Math symbols
+\usepackage{mathrsfs}
+\usepackage{xcolor} % Allows for colored text
+\usepackage{cancel} % Crossing out things in equations
+\usepackage{framed} % Making boxes around things
+\usepackage{mdframed} % Making boxes around things
+\usepackage{float} % Places the figure EXACTLY where it's told
+\usepackage{caption} % Allows for more caption control
+\usepackage[hidelinks, breaklinks=true]{hyperref} % Referencing and URLs. The option hides the coloured links in the document, breaks links (needs to be used with the breakcites package)
+%[dvips,dvipdfm,colorlinks=true,urlcolor=blue,citecolor=red,linkcolor=red,bookmarks=true] % More options
+%\usepackage{breakcites} % Used to break citations
+\usepackage{comment} % Allows for hidden comments in the document
+
+\usepackage{bm} % Allows for black font in math mode
+
+\usepackage{mathtools} % Allows for under and over brackts
+
+
+\usepackage[utf8]{inputenc} % Allows for umlauts and other special characters
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+
+\usepackage[mathscr]{euscript} % Math Symbols and letters
+\usepackage{enumitem} % Allows for different bullet points in the itemize environment
+\usepackage[normalem]{ulem} % Allows for text crossing (and probably other things)
+
+\usepackage[sort,comma]{natbib} % package used by \citep and \citet
+% This solution comes implements a series of options to avoid the previous error
+% Found here: https://tex.stackexchange.com/questions/54480/package-natbib-error-bibliography-not-compatible-with-author-year-citations
+
+%\usepackage[backend=bibtex]{biblatex} % Allows for a different location of the .bib file
+
+
+
+
+\usepackage{setspace} % Package to set spacing in the text
+\doublespacing % Double spacing 
+
+
+
+
+\usepackage{tikz} % Drawing networks
+\usetikzlibrary{shapes.geometric, arrows, fit, positioning, arrows.meta, calc}
+\tikzstyle{nde} = [rectangle, minimum width=0.5cm, minimum height=0.5cm, text centered, draw=black, fill=white]
+\tikzstyle{eq} = [rectangle, minimum width=0.5cm, minimum height=0.5cm, text centered, fill=white]
+\tikzstyle{fig} = [rectangle, minimum width=1cm, minimum height=0.5cm, text centered]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\usepackage{pgfplots} % Makes plots inside of Latex
+\pgfplotsset{width=10cm,compat=1.8}
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+
+
+% Creating environments 
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section] % reset theorem numbering for each chapter
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+
+% Creating operators
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\pr}{Pr}
+\DeclareMathOperator*{\seq}{Seq}
+
+
+
+
+%\usepackage{color}
+
+\title{Network Data Collection: comparison of self-assessment and observational methodologies}
+\author{Michelle Gonz\'alez Amador - UNU Merit/Maastricht University\\
+Sebasti\'an Mart\'inez - University of Glasgow}
+\date{}							% Activate to display a given date or no date
+
+
+\setcounter{tocdepth}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\vskip -2cm
+\begin{center}
+{\let\newpage\relax\maketitle}
+\end{center}
+\begin{abstract}
+Network data collection methods, in their most general form, can be divided into two categories: self-assessed connections and researcher-observed links. The former is based on self-reported peer networks, and the latter alludes to observable structures such as clusters of countries, but could also include human connections when observed through social media platforms, for example. These two methods make different assumptions about the way individuals connect with each other:
+
+Self-assessed connections require surveyed nodes to think of the reach of their personal network, and can be thought of as subjective closeness or repeated social interactions. Measures of closeness rely heavily on node subjectivity, e.g. family, partners, admired local leaders; ultimately, they allow researchers to analyse network structures as perceived by the nodes. On the other hand, time-type networks follow a logic in which behaviour (re: social learning and choices) is influenced by relevant - subjectively close - node behaviour and the most popular behaviour of the larger network, not unlike a DeGroot learning process. They may partially overlap with subjective closeness networks, but tend to be more diverse and consequently exhibit a lesser degree of homophily. Finally, researcher-observed links (of individuals) provide the opportunity to combine closeness and time-type networks through the construction of artificial weights that include some measure of subjective relevance and a count of social interactions in the observed network; the challenge in this case is whether or not the constructed network is representative of the real one. 
+
+Each one of these three structures responds to very particular social contexts. But when the context is not known a priori, e.g. exploratory survey, which network structure could better help us analyse social phenomena? We propose a simulation that allows the same group of individuals to connect in different ways. The simulation is an attempt to understand the extent to which data gathered in one context fits into another. Each simulated individual has a ?closeness? and a ?time? variable, and the respective connections are based on distance to others on that same scale, plus a stochastic component to adjust for randomness. We sample these variables from different distributions, allowing for different types of networks to emerge. An external, independent observer will determine connections as a mix between subjective closeness and repeated social interactions (re: time). We use a Cobb-Douglass type of function to determine these connections and create networks based on proximity of the 'closeness', 'time', and 'observed' scales. Cobb-Douglass functions allow for a certain equivalence between connections: we assume a strong personal influence has a similar effect to many weaker connections. The resulting statistics answer a set of [sampled] questions that include social learning outcomes and group-based choices and outcomes. Results suggest that researcher-observed and time-type networks? outcomes approximate each other in predictive capacity. Given the natural differences between these three structures, we conclude that these two structures may be more efficient, and allow researchers to use network data for a larger sample of phenomena.
+\end{abstract}
+%\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}  
+
+
+
+
